@@ -4,11 +4,14 @@ import ohtu.domain.User;
 import java.util.ArrayList;
 import java.util.List;
 import ohtu.data_access.UserDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 public class AuthenticationService {
 
     private UserDao userDao;
 
+    @Autowired
     public AuthenticationService(UserDao userDao) {
         this.userDao = userDao;
     }
@@ -39,8 +42,19 @@ public class AuthenticationService {
     }
 
     private boolean invalid(String username, String password) {
-        // validity check of username and password
+        if (username.length() < 3 || password.length() < 8) {
+            return true;
+        }
 
-        return false;
+        if (!username.matches("^[a-z]+$")) {
+            return true;
+        }
+
+        boolean validP = false;
+        for (int i = 0; i < password.length(); i++) {
+            validP = validP || !Character.isAlphabetic(password.charAt(i));
+        }
+
+        return !validP;
     }
 }
