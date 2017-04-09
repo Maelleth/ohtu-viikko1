@@ -27,5 +27,19 @@ Feature: A new user account can be created if a proper unused username and passw
 
   Scenario: creation fails when password and password confirmation do not match
     Given new user is selected
-    When new username "geralt" and password "witcher" and passord confirmation "witcher1234" are given
+    When new username "geralt" and password "witcher1" and passord confirmation "witcher1234" are given
     Then user is not created and error "password and password confirmation do not match" is reported
+
+  Scenario: user can login with successfully generated account
+    Given new user is selected
+    And user with username "geralt" with password "witcher1" is successfully created
+    And login is selected
+    When correct username "geralt" and password "witcher1" are given
+    Then user is not logged in and error message is given
+
+  Scenario: user can not login with account that is not successfully created
+    Given new user is selected
+    And user with username "lol" and password "wut" is unsuccessfully created
+    And login is selected
+    When correct username "lol" and incorrect password "wut" are given
+    Then user is not logged in and error message is given
