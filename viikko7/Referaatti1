@@ -1,0 +1,4 @@
+Referaatti artikkelista http://jpattonassociates.com/the-new-backlog/
+
+Jeff Patton kirjoittaa artikkelissaan siitä miten flat backlogi ei ole hyvä käytäntö. Flat backlogia käytetään tyypillisesti Agile kehityksessä. Patton ehdottaa tämän sijaan käytettäväksi story mappia. Yksinkertainen story map voisi toimia niin, että mapin yläosassa on "isot stoorit", kuten epicit. Isoilla stooreilla on "lapsia", jotka ovat pienempiä stooreja. Pienempiä stooreja ovat esim "ability to read messages" ja "ability to send message". Tästä syntyy hierarkia, jossa jokaisella stoorilla on joku konteksti. Koska tavallisessa backlogissa stoorit ovat irrallisia, voi olla vaikeaa ymmärtää kokonaisutta eli mitkä stoorit liittyvät mihinkin stooriin. Story mappi tekee tästä selkeämpää, kun stoorit ovat ryhmitettynä. Esimerkkinä kun hallinnoidaan projektin/sprintin stooreja, on helpompi käsitellä ryhmitettyjä kuin irrallaan toisistaan olevia stooreja.
+
